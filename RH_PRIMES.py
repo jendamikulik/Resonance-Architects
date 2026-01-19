@@ -279,7 +279,7 @@ def integer_score(
     return score
 
 
-def light_filter(cands: np.ndarray, *, kill_squares=True, kill_mod5=False) -> np.ndarray:
+"""def light_filter(cands: np.ndarray, *, kill_squares=True, kill_mod5=False) -> np.ndarray:
     out = []
     for n in cands.astype(int):
         if n > 2 and n % 2 == 0:
@@ -292,6 +292,29 @@ def light_filter(cands: np.ndarray, *, kill_squares=True, kill_mod5=False) -> np
             r = int(np.sqrt(n))
             if r * r == n and n > 4:
                 continue
+        out.append(n)
+    return np.array(sorted(set(out)), dtype=int)"""
+
+
+def light_filter(cands: np.ndarray, *, kill_squares=True, kill_mod5=True, kill_mod7=True,
+                 kill_mod11=True) -> np.ndarray:
+    out = []
+    for n in cands.astype(int):
+        if n < 2: continue
+        if n == 2 or n == 3 or n == 5 or n == 7 or n == 11:
+            out.append(n)
+            continue
+
+        # Základní síto
+        if n % 2 == 0 or n % 3 == 0: continue
+        if kill_mod5 and n % 5 == 0: continue
+        if kill_mod7 and n % 7 == 0: continue
+        if kill_mod11 and n % 11 == 0: continue
+
+        if kill_squares:
+            r = int(np.sqrt(n))
+            if r * r == n: continue
+
         out.append(n)
     return np.array(sorted(set(out)), dtype=int)
 
@@ -513,20 +536,20 @@ if __name__ == "__main__":
     #
     run_core_frame(
         x_min=2,
-        x_max=60,
-        num_points=30000,
-        n_zeros=30,
+        x_max=1000,
+        num_points=200000,
+        n_zeros=150,
         gamma_source="hardyZ",      # <-- switch here ("zetazero" or "hardyZ")
         hardy_tmax_start=50.0,
         hardy_dt=0.005,            # finer step => fewer misses
         hardy_tol=1e-12,
-        delta_k=0.010,
+        delta_k=0.005,
         center_log="xmin",
         use_siegel_phase=True,
         use_cvxopt=True,
-        peak_height=0.18,
+        peak_height=0.10,
         peak_distance=12,
-        score_top_k=70,
+        score_top_k=300,
         filter_kill_squares=True,
         filter_kill_mod5=True
     )
