@@ -933,6 +933,6 @@ if __name__ == "__main__":
 
     # 3) high-N window test (start with 1e15 if you want faster iteration)
     #run_core_frame_window(N=10**15, W=2_000_000, n_zeros=25, gamma_source="zetazero", score_top_k=5000)
-    run_core_frame_window(N=10**1000, W=1_000_000, n_zeros=5, gamma_source="zetazero", score_top_k=1_000_001)
+    run_core_frame_window(N=10**1000, W=100_000, n_zeros=5, gamma_source="zetazero", score_top_k=100_001)
 
 
