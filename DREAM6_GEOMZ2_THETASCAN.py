@@ -1660,7 +1660,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="DREAM6_operator_2 functional certifier (no placeholders).")
     ap.add_argument("--C", type=int, default=2000)
     ap.add_argument("--R", type=int, default=104)
-    ap.add_argument("--d", type=int, default=4)
+    ap.add_argument("--d", type=int, default=24)
     ap.add_argument("--mode", type=str, default="sat", choices=["sat", "unsat"])
     ap.add_argument("--sweeps", type=int, default=2)
     ap.add_argument("--eta", type=float, default=0.5)
@@ -1675,7 +1675,7 @@ def main() -> None:
     ap.add_argument("--tail-frac", type=float, default=0.33, help="Fraction of the end of R(t) used for tail metrics.")
 
 
-    ap.add_argument("--shared-carrier", action="store_true", default=False)
+    ap.add_argument("--shared-carrier", action="store_true", default=True)
     ap.add_argument("--shared-misphase", dest="shared_misphase", action="store_true", default=True)
     ap.add_argument("--no-shared-misphase", dest="shared_misphase", action="store_false")
     ap.add_argument("--unsat-neg-frac", type=float, default=0.25)
@@ -1684,14 +1684,14 @@ def main() -> None:
     ap.add_argument("--power-iters", type=int, default=250)
     ap.add_argument("--power-tol", type=float, default=1e-10)
 
-    ap.add_argument("--ipc-weights", type=str, default="auto", choices=["ones", "cvxopt", "corr", "cvxopt_corr", "auto"])
+    ap.add_argument("--ipc-weights", type=str, default="ones", choices=["ones", "cvxopt", "corr", "cvxopt_corr", "auto"])
     ap.add_argument("--w-delta-min", type=float, default=12.0)
     ap.add_argument("--w-delta-max", type=float, default=1000.0)
 
     ap.add_argument("--json-out", type=str, default=None)
     ap.add_argument("--verify-json", type=str, default=None)
 
-    ap.add_argument("--cnf-path", type=str, default=None, help="DIMACS CNF path (.cnf)")
+    ap.add_argument("--cnf-path", type=str, default="uf250-0100.cnf", help="DIMACS CNF path (.cnf)")
     ap.add_argument("--edge-mode", type=str, default="auto", choices=["auto","circulant","cnf","logic"],
                    help="Graph topology: auto (cnf->logic else circulant), circulant, cnf/logic (CNF clause-variable graph)")
     ap.add_argument("--outside-value", type=float, default=-1.0,
