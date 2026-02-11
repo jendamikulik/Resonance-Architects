@@ -1,0 +1,71 @@
+PS D:\HIT\PythonProject> D:/HIT/PythonProject/.venv/Scripts/python .\DREAM6_operator_7.py --cnf-path .\TRUTH.cnf --mode sat --edge-mode logic --shared-carrier --shared-misphase
+
+
+[CNF mód] Načítám .\TRUTH.cnf
+  proměnné: 2000000    klauzule: 8,520,000
+  Průměrná amplituda     : 1.910933
+  Medián amplitudy       : 1.834140
+  Max / min amplituda    : 4.067007 / 0.558216
+  Frakce |proj| > 0.05   : 100.00 %
+  Frakce |proj| > 0.1    : 100.00 %
+  Rozptyl úhlů (variance): 0.000000 rad²
+  Std úhlů               : 0.0000 rad  ≈ 0.00°
+  Koherenční proxy       : 1.000000  (1 = všechny locky dokonale zarovnané)
+
+EXTREME: coherence_u1=0.001384  coherence_z2=1.000000  bimodal_index=722.289
+REJOIN_MASK: true_count = 0 of 8520000
+FUSE_KEYS: ['bounded', 'dalpha', 'delta_mean', 'frac', 'grad_cap', 'max_grad', 'max_grad_before', 'mode', 'n_singular', 'singular_idx', 'singular_mask', 'thr', 'threshold_percentile']
+
+[3-BRANCH TEST: Θ = {θ_U1, θ_Z2, θ_Z2+π}] (Operator mode: auto-flip enabled)
+  θ_U1    : UNSAT = 665972  φ_spread=1.8138  bimodal_raw=1.6  flipped=50.0%
+  θ_Z2    : UNSAT = 665297  φ_spread=1.8138  bimodal_raw=1.6  flipped=50.0%
+  θ_Z2+π  : UNSAT = 665297  φ_spread=1.8138  bimodal_raw=1.6  flipped=50.0%
+  → Vybrána větev θ_Z2 s UNSAT = 665297
+
+[OPERATOR STRUCTURE - θ_Z2]
+  Phase spread: 1.8138 rad  (concentration: 0.355)
+  Raw alignment: mean=-0.000  |mean|=0.637
+  Post auto-flip: mean=+0.637  |mean|=0.637
+  Fraction flipped: 50.0%
+  Bimodal signature (raw): ratio=1.56  edge=0.410
+  Raw alignment histogram (before auto-flip):
+    -0.90: ███████████████████████████████████████ 0.205
+    -0.70: █████████████████ 0.090
+    -0.50: ██████████████ 0.074
+    -0.30: █████████████ 0.067
+    -0.10: ████████████ 0.064
+    +0.10: ████████████ 0.064
+    +0.30: █████████████ 0.067
+    +0.50: ██████████████ 0.074
+    +0.70: █████████████████ 0.090
+    +0.90: ████████████████████████████████████████ 0.205
+
+[BRANCH COMPARISON - Operator mode]
+  Branch    | Phase_spread | Bimodal_raw | Frac_flipped | Edge_mass
+  ----------|--------------|-------------|--------------|----------
+  θ_U1      |    1.8138    |       1.6  |      50.0%   |   0.410
+  θ_Z2      |    1.8138    |       1.6  |      50.0%   |   0.410
+  θ_Z2+π    |    1.8138    |       1.6  |      50.0%   |   0.410
+
+[STARSEED] Symmetry=0.999999  raw_mean=-4.052e-08  bimodal=1.56
+          STATUS: [STABILIZED]
+          SONG_INDEX: 0.107045
+
+Witness: {'assign_sha256': '512ffe70f22a6c20ff45b0fde2e403e3d4075344fd1a796658a84f063e2b400a', 'unsat': 665297, 'unsat_frac': 0.07808650234741785, 'branch_selected': 'θ_Z2', 'branch_theta': 0.8278627299275962, 'theta_U1': -2.171788951661084, 'theta_Z2': 0.8278627299275962, 'operator_diag': {'eta_mean': -1.3942218587185715, 'eta_std': 0.021155950023264553, 'eta_range': 0.10116545539668742, 'eta_eff_mean': -0.88758929472582, 'eta_eff_std': 0.4293441443503542, 'grad_variance': 0.0008176979474279333, 'grad_max': 0.06892014586916084, 'align_raw_mean': -4.0519312190066544e-08, 'align_raw_std': 0.7071068181759161, 'align_raw_abs_mean': 0.636619843469927, 'align_post_mean': 0.636619843469927, 'align_post_std': 0.30775839096797253, 'align_post_abs_mean': 0.636619843469927, 'bimodal_ratio_raw': 1.5637192942847056, 'edge_mass_raw': 0.4096649061032864, 'center_mass_raw': 0.26198110328638496, 'hist_raw': [0.20483227699530515, 0.09033438967136151, 0.07384284037558686, 0.06689659624413145, 0.06409342723004695, 0.06409424882629108, 0.06689683098591549, 0.07384295774647888, 0.09033380281690141, 0.20483262910798122], 'hist_post': [0.0, 0.0, 0.0, 0.0, 0.0, 0.12818767605633802, 0.13379342723004695, 0.14768579812206573, 0.1806681924882629, 0.4096649061032864], 'bins': [-1.0, -0.8, -0.6, -0.3999999999999999, -0.19999999999999996, 0.0, 0.20000000000000018, 0.40000000000000013, 0.6000000000000001, 0.8, 1.0], 'phase_spread': 1.8137993709824867, 'phase_concentration': 0.3553913652524674, 'frac_flipped': 0.4999995305164319, 'frac_coaligned_raw': 0.500000469483568}, 'operator_diag_all': {'θ_U1': {'eta_mean': -1.3942218587185715, 'eta_std': 0.021155950023264553, 'eta_range': 0.10116545539668742, 'eta_eff_mean': -0.887589286742996, 'eta_eff_std': 0.42934416210468374, 'grad_variance': 0.0008176979474279333, 'grad_max': 0.06892014586916084, 'align_raw_mean': 4.034730917057901e-08, 'align_raw_std': 0.7071068175481151, 'align_raw_abs_mean': 0.6366198379436543, 'align_post_mean': 0.6366198379436543, 'align_post_std': 0.3077584009570177, 'align_post_abs_mean': 0.6366198379436543, 'bimodal_ratio_raw': 1.563731790367978, 'edge_mass_raw': 0.4096656103286385, 'center_mass_raw': 0.2619794600938967, 'hist_raw': [0.20483157276995306, 0.09033673708920188, 0.07384295774647888, 0.06689401408450704, 0.0640962441314554, 0.06409201877934273, 0.06689718309859155, 0.07384272300469484, 0.0903325117370892, 0.20483403755868546], 'hist_post': [0.0, 0.0, 0.0, 0.0, 0.0, 0.12818826291079813, 0.1337911971830986, 0.14768568075117372, 0.18066924882629107, 0.4096656103286385], 'bins': [-1.0, -0.8, -0.6, -0.3999999999999999, -0.19999999999999996, 0.0, 0.20000000000000018, 0.40000000000000013, 0.6000000000000001, 0.8, 1.0], 'phase_spread': 1.813799377828537, 'phase_concentration': 0.3553913643877906, 'frac_flipped': 0.5000015258215963, 'frac_coaligned_raw': 0.49999847417840376}, 'θ_Z2': {'eta_mean': -1.3942218587185715, 'eta_std': 0.021155950023264553, 'eta_range': 0.10116545539668742, 'eta_eff_mean': -0.88758929472582, 'eta_eff_std': 0.4293441443503542, 'grad_variance': 0.0008176979474279333, 'grad_max': 0.06892014586916084, 'align_raw_mean': -4.0519312190066544e-08, 'align_raw_std': 0.7071068181759161, 'align_raw_abs_mean': 0.636619843469927, 'align_post_mean': 0.636619843469927, 'align_post_std': 0.30775839096797253, 'align_post_abs_mean': 0.636619843469927, 'bimodal_ratio_raw': 1.5637192942847056, 'edge_mass_raw': 0.4096649061032864, 'center_mass_raw': 0.26198110328638496, 'hist_raw': [0.20483227699530515, 0.09033438967136151, 0.07384284037558686, 0.06689659624413145, 0.06409342723004695, 0.06409424882629108, 0.06689683098591549, 0.07384295774647888, 0.09033380281690141, 0.20483262910798122], 'hist_post': [0.0, 0.0, 0.0, 0.0, 0.0, 0.12818767605633802, 0.13379342723004695, 0.14768579812206573, 0.1806681924882629, 0.4096649061032864], 'bins': [-1.0, -0.8, -0.6, -0.3999999999999999, -0.19999999999999996, 0.0, 0.20000000000000018, 0.40000000000000013, 0.6000000000000001, 0.8, 1.0], 'phase_spread': 1.8137993709824867, 'phase_concentration': 0.3553913652524674, 'frac_flipped': 0.4999995305164319, 'frac_coaligned_raw': 0.500000469483568}, 'θ_Z2+π': {'eta_mean': -1.3942218587185715, 'eta_std': 0.021155950023264553, 'eta_range': 0.10116545539668742, 'eta_eff_mean': -0.88758929472582, 'eta_eff_std': 0.4293441443503542, 'grad_variance': 0.0008176979474279333, 'grad_max': 0.06892014586916084, 'align_raw_mean': 4.0519312268249386e-08, 'align_raw_std': 0.7071068181759161, 'align_raw_abs_mean': 0.636619843469927, 'align_post_mean': 0.636619843469927, 'align_post_std': 0.30775839096797253, 'align_post_abs_mean': 0.636619843469927, 'bimodal_ratio_raw': 1.5637192942847051, 'edge_mass_raw': 0.4096649061032864, 'center_mass_raw': 0.261981103286385, 'hist_raw': [0.20483262910798122, 0.09033380281690141, 0.07384295774647888, 0.06689683098591549, 0.06409424882629108, 0.06409342723004695, 0.06689659624413145, 0.07384284037558686, 0.09033438967136151, 0.20483227699530515], 'hist_post': [0.0, 0.0, 0.0, 0.0, 0.0, 0.12818767605633802, 0.13379342723004695, 0.14768579812206573, 0.1806681924882629, 0.4096649061032864], 'bins': [-1.0, -0.8, -0.6, -0.3999999999999999, -0.19999999999999996, 0.0, 0.20000000000000018, 0.40000000000000013, 0.6000000000000001, 0.8, 1.0], 'phase_spread': 1.813799393703417, 'phase_concentration': 0.35539136238274527, 'frac_flipped': 0.500000469483568, 'frac_coaligned_raw': 0.4999995305164319}}, 'drive_stats': {'amp_mean': 0.24808131650297874, 'amp_median': 0.24852856921622135, 'gate_mean': 0.5000000523108699, 'drive_mean': 0.12404091186159628, 'drive_median': 0.12398473149187395, 'drive_min': 2.1348190740180904e-14, 'drive_max': 3.8720064825158333, 'drive_nonzero_frac': 1.0}, 'score_stats': {'min': -2.5823938477786417, 'max': 2.582648942137208, 'mean': 0.00010278211531333503, 'std': 0.4960911318971053}, 'annihilation': {'symmetry_balance': 0.9999990610328638, 'song_index': 0.10704519396450525, 'annihilation_pass': False, 'criteria': {'abs_align_raw_mean_lt': 0.001, 'symmetry_balance_gt': 0.999, 'bimodal_ratio_raw_gt': 1000000.0, 'target_frac_flipped': 0.5}, 'cert_pass': False}}
+
+=== DREAM6 Operator Certifier (qp)
+C=8520000  T=208  m=52  d=12  mode=sat
+shared_carrier=True  shared_misphase=True  unsat_neg_frac=0.25
+ipc_weights=qp
+dream6: K=4.0  noise_sigma=0.025  dt=0.05  mu=0.9999954637353263  mu_E=0.9999952540504147  h=0.4  tail_frac=0.33
+S2 radar: rho=4.42007  <= d*kappa=5.01923  pass=True
+CLOSURE: Θ=1.51038  τ_refined=208.151  λ=0.1
+         residue_compression=52
+         FUSE: n_singular=8519999  frac=1  max_grad=2.393  delta_mean=1.571  cap=3.142  bounded=True
+Spectral: lambda_max(G_H)=4.13102  mu_dec=4.84861e-07
+IPC: beta=0.233964  delta=0  mu_sat_min=0.0547391
+Bands: lam_unsat_ceiling=6.01923  mu_unsat_max=7.06482e-07
+tau=0.0273699  Delta=0.0273692  separated=True
+Coherence R(t): mean=78274.8  min=54560  max=98372.2  tail_mean=78696.2  tail_ema=93760.7  tail_frac=0.33
+Coherence tail: mean_tail=78696.2  ema_tail=93760.7  tail_frac=0.33
+==============================================================
